@@ -10,7 +10,7 @@ class GetCategoriesController extends Controller
 {
     public function __invoke(Request $request)
     {
-        return Category::where('active')
+        return Category::where('active', true)
             ->select('id')
             ->addSelect('title')
             ->addSelect('description')
