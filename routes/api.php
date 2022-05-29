@@ -11,5 +11,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::prefix('v1')->group(function () {
     Route::get('tour-pages', GetTourPagesController::class);
-    Route::get('tour-pages', GetCategoriesController::class);
+    Route::get('categories', GetCategoriesController::class);
 });
