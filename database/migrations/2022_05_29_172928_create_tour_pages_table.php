@@ -19,7 +19,9 @@ return new class extends Migration
             $table->text('image_url');
             $table->string('title');
             $table->text('subtitle');
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
+            $table->foreignId('created_by')->constrained('users');
+            $table->foreignId('updated_by')->constrained('users');
             $table->timestamps();
         });
     }
