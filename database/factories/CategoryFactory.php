@@ -21,6 +21,7 @@ class CategoryFactory extends Factory
             'description' => $this->faker->realText(),
             'image_url' => $this->faker->imageUrl(),
             'background_color' => $this->faker->hexColor(),
+            'background_image_url' => sprintf("https://picsum.photos/seed/%s/1080/1920", $this->faker->unique()->word()),
             'tag_quantity' => static function($attributes) {
                 return match ($attributes['title']) {
                     'My Love' => 2,

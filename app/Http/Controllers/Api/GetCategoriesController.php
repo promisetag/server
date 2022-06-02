@@ -17,6 +17,7 @@ class GetCategoriesController extends Controller
             ->addSelect('description')
             ->addSelect('image_url')
             ->addSelect('background_color')
+            ->addSelect('background_image_url')
             ->addSelect('tag_quantity')
             ->addSelect('storage_space_quantity')
             ->addSelect('storage_space_unit')
