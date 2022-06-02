@@ -21,7 +21,6 @@ class GetCategoriesController extends Controller
             ->addSelect('tag_quantity')
             ->addSelect('storage_space_quantity')
             ->addSelect('storage_space_unit')
-            ->get()
-            ->toJson();
+            ->get();
     }
 }
