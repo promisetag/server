@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class GetCategoriesController extends Controller
 {
-    public function __invoke(Request $request): string
+    public function __invoke(Request $request)
 
     {
         return Category::where('active', true)
