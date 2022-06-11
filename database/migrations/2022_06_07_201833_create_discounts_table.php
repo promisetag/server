@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', static function (Blueprint $table) {
+        Schema::create('discounts', static function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->text('image_url');
-            $table->string('background_color');
-            $table->string('background_image_url');
-            $table->integer('tag_quantity')->nullable();
-            $table->integer('storage_space_quantity')->nullable();
-            $table->string('storage_space_unit')->nullable();
-            $table->boolean('active')->default(true);
+            $table->bigInteger('discountable_id');
+            $table->string('discountable_type');
+            $table->string('discount_percent');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->foreignId('created_by')->constrained('admins');
             $table->foreignId('updated_by')->constrained('admins');
             $table->timestamps();
@@ -37,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('discounts');
     }
 };
