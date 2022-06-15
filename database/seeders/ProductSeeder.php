@@ -16,6 +16,7 @@ class ProductSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         Product::truncate();
         Review::truncate();
+        Product::media()->delete();
 
         $product = Product::create([
             'name' => "The Promise Lovetag",
@@ -27,13 +28,13 @@ class ProductSeeder extends Seeder
             'updated_by' => 1,
         ]);
 
-        $product->addMedia(public_path('product_image_001.jpg'))
+        $product->addMedia(public_path('images/test/product_image_001.jpg'))
             ->preservingOriginal()
             ->toMediaCollection('images');
-        $product->addMedia(public_path('product_image_002.jpg'))
+        $product->addMedia(public_path('images/test/product_image_002.jpg'))
             ->preservingOriginal()
             ->toMediaCollection('images');
-        $product->addMedia(public_path('product_image_003.jpg'))
+        $product->addMedia(public_path('images/test/product_image_003.jpg'))
             ->preservingOriginal()
             ->toMediaCollection('images');
 

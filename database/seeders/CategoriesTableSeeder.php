@@ -20,7 +20,7 @@ class CategoriesTableSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         Category::truncate();
 
-        Category::factory(3)->create([
+        $categories = Category::factory(3)->create([
             'image_url' => url('images/couple.png'),
         ]);
     }
