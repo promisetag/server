@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->text('image_url');
             $table->string('background_color');
-            $table->string('background_image_url');
             $table->integer('tag_quantity')->nullable();
             $table->integer('storage_space_quantity')->nullable();
             $table->string('storage_space_unit')->nullable();

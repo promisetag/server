@@ -19,13 +19,13 @@ class ProductPreset extends Model implements HasMedia
 
     protected $guarded = [];
 
-    public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    {
-        return $this->belongsToMany(Tag::class);
-    }
-
     protected static function newFactory(): ProductPresetFactory
     {
         return new ProductPresetFactory();
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 }

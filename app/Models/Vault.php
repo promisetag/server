@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-/**
- * @mixin IdeHelperTourPage
- */
-class TourPage extends Model implements HasMedia
+class Vault extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
+
+    protected $guarded = [];
 }

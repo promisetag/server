@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_preset_tag', static function (Blueprint $table) {
-            $table->foreignId('product_preset_id')->constrained();
-            $table->foreignId('tag_id')->constrained();
+        Schema::create('vaults', static function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('storage_space_allotted');
+            $table->string('storage_space_used');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_preset_tag');
+        Schema::dropIfExists('vaults');
     }
 };

@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tour_pages', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('background_color');
-            $table->string('title');
-            $table->text('subtitle');
-            $table->boolean('active')->default(true);
-            $table->foreignId('created_by')->constrained('admins');
-            $table->foreignId('updated_by')->constrained('admins');
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tour_pages');
+        Schema::dropIfExists('orders');
     }
 };
