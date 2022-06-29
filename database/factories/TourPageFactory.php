@@ -18,7 +18,6 @@ class TourPageFactory extends Factory
     {
         return [
             'background_color' => $this->faker->hexColor(),
-            'image_url' => $this->faker->imageUrl(),
             'title' => $this->faker->unique()->randomElement(['Get Inspired', 'Eat & Healthy', 'Save Favourites']),
             'subtitle' => $this->faker->realText(),
             'created_by'    => 1,

@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('taggables', function (Blueprint $table) {
-            $table->unsignedBigInteger('tag_id');
-            $table->unsignedBigInteger('taggable_id');
-            $table->string('taggable_type');
+        Schema::create('reviewables', function (Blueprint $table) {
+            $table->unsignedBigInteger('review_id');
+            $table->unsignedBigInteger('reviewable_id');
+            $table->string('reviewable_type');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taggables');
+        Schema::dropIfExists('reviewables');
     }
 };

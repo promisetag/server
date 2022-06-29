@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace Domain\Products\Models;
 
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -19,14 +21,20 @@ class Product extends Model implements HasMedia
 
     protected $guarded = [];
 
+    protected $casts = [
+        'quantity_threshold' => 'integer',
+        'base_price' => 'integer'
+
+    ];
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
     }
 
-    public function reviews(): HasMany
+    public function reviews(): MorphToMany
     {
-        return $this->hasMany(Review::class);
+        return $this->morphToMany(Review::class, 'reviewable');
     }
 
     public function registerMediaCollections(): void

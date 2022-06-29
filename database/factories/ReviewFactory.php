@@ -19,7 +19,6 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => Product::factory(),
             'rating' => $this->faker->randomElement([1,2,3,4,5]),
             'comment' => $this->faker->realText,
             'created_by' => User::factory(),

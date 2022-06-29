@@ -22,8 +22,8 @@ class ProductPresetSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         ProductPreset::truncate();
         Tag::truncate();
-        DB::table('product_preset_tag')->truncate();
-        Media::where('model_type', 'Domain\\Products\\Models\\ProductPreset')->delete();
+        DB::table('taggables')->truncate();
+        Media::where('model_type', ProductPreset::class)->delete();
 
         $tags = Tag::factory(6)->create();
 
