@@ -1,8 +1,8 @@
 <?php
 
-namespace Domain\Products\Models\Factories;
+namespace Domain\Products\Factories;
 
-use App\Models\Product;
+use Domain\Products\Models\Product;
 use Domain\Products\Models\ProductPreset;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

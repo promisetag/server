@@ -3,7 +3,7 @@
 namespace Domain\Products\Models;
 
 use App\Models\IdeHelperProductPreset;
-use Domain\Products\Models\Factories\ProductPresetFactory;
+use Domain\Products\Factories\ProductPresetFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;

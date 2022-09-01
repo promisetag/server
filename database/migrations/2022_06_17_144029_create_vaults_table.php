@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('storage_space_allotted');
             $table->string('storage_space_used');
+            $table->string('status');
             $table->timestamps();
         });
     }
